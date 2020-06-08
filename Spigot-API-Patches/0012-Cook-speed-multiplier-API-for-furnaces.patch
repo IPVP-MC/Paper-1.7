@@ -1,17 +1,18 @@
-From 78831352e06dd2e15c0c7cab42faf19b58c73054 Mon Sep 17 00:00:00 2001
+From 7e9108570610c41431fdf09f41766aa4a9ab672c Mon Sep 17 00:00:00 2001
 From: DoctorDark <doctordark11@gmail.com>
 Date: Fri, 11 Sep 2015 14:54:49 +0100
 Subject: [PATCH] Cook speed multiplier API for furnaces
 
 
 diff --git a/src/main/java/org/bukkit/block/Furnace.java b/src/main/java/org/bukkit/block/Furnace.java
-index 94af85e..f25304d 100644
+index 94af85e1..f25304db 100644
 --- a/src/main/java/org/bukkit/block/Furnace.java
 +++ b/src/main/java/org/bukkit/block/Furnace.java
-@@ -8,6 +8,24 @@ import org.bukkit.inventory.FurnaceInventory;
+@@ -7,6 +7,24 @@ import org.bukkit.inventory.FurnaceInventory;
+  */
  public interface Furnace extends BlockState, ContainerBlock {
  
-     /**
++    /**
 +     * Gets the speed multiplier that this {@link Furnace} will cook
 +     * compared to vanilla.
 +     *
@@ -29,10 +30,9 @@ index 94af85e..f25304d 100644
 +     */
 +    void setCookSpeedMultiplier(double multiplier);
 +
-+    /**
+     /**
       * Get burn time.
       *
-      * @return Burn time
 -- 
-1.9.5.github.0
+2.27.0.windows.1
 

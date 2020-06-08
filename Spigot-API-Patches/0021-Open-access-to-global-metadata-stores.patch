@@ -1,4 +1,4 @@
-From 6d477fa0aa9aa8b6008313aba45347759ef92840 Mon Sep 17 00:00:00 2001
+From ea8f01703def31ffe857a54ecb31078ab912f94c Mon Sep 17 00:00:00 2001
 From: Matthew <matthew.steglinski@utoronto.ca>
 Date: Thu, 10 Aug 2017 11:09:25 -0400
 Subject: [PATCH] Open access to global metadata stores
@@ -24,10 +24,11 @@ index b85a699f..54ea9d77 100644
  import org.bukkit.plugin.PluginManager;
  import org.bukkit.plugin.ServicesManager;
  import org.bukkit.plugin.messaging.Messenger;
-@@ -521,6 +523,27 @@ public final class Bukkit {
+@@ -520,6 +522,27 @@ public final class Bukkit {
+         return server.getOperators();
      }
  
-     /**
++    /**
 +     * @see Server#getEntityMetadata() 
 +     */
 +    public static MetadataStore<Entity> getEntityMetadata() {
@@ -48,10 +49,9 @@ index b85a699f..54ea9d77 100644
 +        return server.getWorldMetadata();
 +    }
 +    
-+    /**
+     /**
       * @see Server#getWorldContainer()
       */
-     public static File getWorldContainer() {
 diff --git a/src/main/java/org/bukkit/Server.java b/src/main/java/org/bukkit/Server.java
 index 86d88546..1b5adf86 100644
 --- a/src/main/java/org/bukkit/Server.java
@@ -72,10 +72,11 @@ index 86d88546..1b5adf86 100644
  import org.bukkit.permissions.Permissible;
  import org.bukkit.plugin.PluginManager;
  import org.bukkit.plugin.ServicesManager;
-@@ -685,6 +687,27 @@ public interface Server extends PluginMessageRecipient {
+@@ -684,6 +686,27 @@ public interface Server extends PluginMessageRecipient {
+      */
      public ConsoleCommandSender getConsoleSender();
  
-     /**
++    /**
 +     * Gets the metadata store for all entities.
 +     *
 +     * @return entity metadata store
@@ -96,10 +97,9 @@ index 86d88546..1b5adf86 100644
 +     */
 +    public MetadataStore<World> getWorldMetadata();
 +
-+    /**
+     /**
       * Gets the folder that contains all of the various {@link World}s.
       *
-      * @return folder that contains all worlds
 diff --git a/src/main/java/org/bukkit/World.java b/src/main/java/org/bukkit/World.java
 index 54eba08c..af2707e6 100644
 --- a/src/main/java/org/bukkit/World.java
@@ -112,20 +112,20 @@ index 54eba08c..af2707e6 100644
  import org.bukkit.metadata.Metadatable;
  import org.bukkit.plugin.messaging.PluginMessageRecipient;
  import org.bukkit.util.Vector;
-@@ -45,6 +46,13 @@ public interface World extends PluginMessageRecipient, Metadatable {
+@@ -44,6 +45,13 @@ public interface World extends PluginMessageRecipient, Metadatable {
+      */
      public Block getBlockAt(Location location);
  
-     /**
++    /**
 +     * Gets the metadata store for all blocks.
 +     *
 +     * @return block metadata store
 +     */
 +    public MetadataStore<Block> getBlockMetadata();
 +
-+    /**
+     /**
       * Gets the block type ID at the given coordinates
       *
-      * @param x X-coordinate of the block
 -- 
-2.13.0.windows.1
+2.27.0.windows.1
 

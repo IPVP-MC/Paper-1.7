@@ -1,4 +1,4 @@
-From 7832f98b590cf07e35b1089b6d90e9b06445080b Mon Sep 17 00:00:00 2001
+From e335e69c2c37206dce88fb573cd4597558294ca9 Mon Sep 17 00:00:00 2001
 From: Matthew Steglinski <matthew.steglinski@mail.utoronto.ca>
 Date: Thu, 11 Jan 2018 20:02:08 -0500
 Subject: [PATCH] Expand EnderpearlLandEvent to allow cancellation and getting
@@ -6,7 +6,7 @@ Subject: [PATCH] Expand EnderpearlLandEvent to allow cancellation and getting
 
 
 diff --git a/src/main/java/net/minecraft/server/EntityEnderPearl.java b/src/main/java/net/minecraft/server/EntityEnderPearl.java
-index a21cf0e8b..c78d38cc8 100644
+index 36d6c633..87ea4a66 100644
 --- a/src/main/java/net/minecraft/server/EntityEnderPearl.java
 +++ b/src/main/java/net/minecraft/server/EntityEnderPearl.java
 @@ -3,6 +3,7 @@ package net.minecraft.server;
@@ -17,7 +17,7 @@ index a21cf0e8b..c78d38cc8 100644
  import org.bukkit.craftbukkit.event.CraftEventFactory;
  import org.bukkit.event.entity.EnderpearlLandEvent;
  import org.bukkit.event.player.PlayerTeleportEvent;
-@@ -52,9 +53,15 @@ public class EntityEnderPearl extends EntityProjectile {
+@@ -81,9 +82,15 @@ public class EntityEnderPearl extends EntityProjectile {
                      org.bukkit.craftbukkit.entity.CraftPlayer player = entityplayer.getBukkitEntity();
  
                      EnderpearlLandEvent.Reason reason = movingobjectposition.entity != null ? EnderpearlLandEvent.Reason.ENTITY : EnderpearlLandEvent.Reason.BLOCK;
@@ -35,5 +35,5 @@ index a21cf0e8b..c78d38cc8 100644
                      location.setPitch(player.getLocation().getPitch());
                      location.setYaw(player.getLocation().getYaw());
 -- 
-2.15.1.windows.2
+2.27.0.windows.1
 

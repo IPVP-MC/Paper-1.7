@@ -1,4 +1,4 @@
-From 54acc2c8462d045981061ece953fc8ba31b8ef01 Mon Sep 17 00:00:00 2001
+From 7e36ee4ebad27f25d60ed680b49eb6d383009d79 Mon Sep 17 00:00:00 2001
 From: Matthew <matthew.steglinski@utoronto.ca>
 Date: Wed, 9 Aug 2017 22:58:57 -0400
 Subject: [PATCH] Allow setting world spawnpoint yaw and pitch
@@ -8,10 +8,11 @@ diff --git a/src/main/java/org/bukkit/World.java b/src/main/java/org/bukkit/Worl
 index c962e7de..54eba08c 100644
 --- a/src/main/java/org/bukkit/World.java
 +++ b/src/main/java/org/bukkit/World.java
-@@ -477,6 +477,18 @@ public interface World extends PluginMessageRecipient, Metadatable {
+@@ -476,6 +476,18 @@ public interface World extends PluginMessageRecipient, Metadatable {
+      */
      public boolean setSpawnLocation(int x, int y, int z);
  
-     /**
++    /**
 +     * Sets the spawn location of the world
 +     * 
 +     * @param x X coordinate
@@ -23,10 +24,9 @@ index c962e7de..54eba08c 100644
 +     */
 +    public boolean setSpawnLocation(int x, int y, int z, float yaw, float pitch);
 +
-+    /**
+     /**
       * Gets the relative in-game time of this world.
       * <p>
-      * The relative time is analogous to hours * 1000
 -- 
-2.13.0.windows.1
+2.27.0.windows.1
 

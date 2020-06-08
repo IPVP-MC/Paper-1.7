@@ -1,4 +1,4 @@
-From be301dba95f78999fc695ac75b2cd35cc7650a97 Mon Sep 17 00:00:00 2001
+From 7724172873a30e6b7b974f7a65fe697cafefe245 Mon Sep 17 00:00:00 2001
 From: Matthew Steglinski <matthew.steglinski@mail.utoronto.ca>
 Date: Thu, 31 Aug 2017 15:28:17 -0400
 Subject: [PATCH] Add getLastLogin and getLastLogout methods to OfflinePlayer
@@ -8,19 +8,19 @@ diff --git a/src/main/java/org/bukkit/OfflinePlayer.java b/src/main/java/org/buk
 index e98706a6..ffb88b0d 100644
 --- a/src/main/java/org/bukkit/OfflinePlayer.java
 +++ b/src/main/java/org/bukkit/OfflinePlayer.java
-@@ -89,6 +89,12 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
+@@ -88,6 +88,12 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
+      */
      public long getFirstPlayed();
  
-     /**
++    /**
 +     * @deprecated Use {@link #getLastLogin()} or {@link #getLastLogout()}
 +     */
 +    @Deprecated
 +    public long getLastPlayed();
 +
-+    /**
+     /**
       * Gets the last date and time that this player was witnessed on this
       * server.
-      * <p>
 @@ -98,7 +104,19 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
       *
       * @return Date of last log-in for this player, or 0
@@ -43,5 +43,5 @@ index e98706a6..ffb88b0d 100644
      /**
       * Checks if this player has played on this server before.
 -- 
-2.11.0
+2.27.0.windows.1
 
